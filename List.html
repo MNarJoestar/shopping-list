@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Compras</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="./index.js" defer=""></script>
+    <link rel="stylesheet" href="./index.css">
+  </head>
+
+  <body>
+    <h1>Lista de Compras</h1>
+    <div>
+      <label for="form">
+        <form id="shopping-list">
+          <ul>
+            <li>
+              <input type="checkbox" class="item-checkbox" data-price="1.00"> Lentejas
+              <input type="text" class="item-price" value="0.00">
+            </li>
+            <li>
+              <input type="checkbox" class="item-checkbox" data-price="1.00"> Arroz
+              <input type="text" class="item-price" value="0.00">
+            </li>
+            <li>
+              <input type="checkbox" class="item-checkbox" data-price="1.00"> Harina de trigo
+              <input type="text" class="item-price" value="0.00">
+            </li>
+            <li>
+              <input type="checkbox" class="item-checkbox" data-price="1.00"> Leche
+              <input type="text" class="item-price" value="0.00">
+            </li>
+            <li>
+              <input type="checkbox" class="item-checkbox" data-price="1.00"> Pasta
+              <input type="text" class="item-price" value="0.00">
+            </li>
+            <li>
+              <input type="checkbox" class="item-checkbox" data-price="1.00"> Cereal
+              <input type="text" class="item-price" value="0.00">
+            </li>
+            <li>
+              <input type="checkbox" class="item-checkbox" data-price="1.00"> Frijoles
+              <input type="text" class="item-price" value="0.00">
+            </li>
+            <li>
+              <input type="checkbox" class="item-checkbox" data-price="1.00"> Carne
+              <input type="text" class="item-price" value="0.00">
+            </li>
+            <li>
+              <input type="checkbox" class="item-checkbox" data-price="1.00"> Pollo
+              <input type="text" class="item-price" value="0.00">
+            </li>
+            <li>
+              <input type="checkbox" class="item-checkbox" data-price="1.00"> Queso
+              <input type="text" class="item-price" value="0.00">
+            </li>
+            <li>
+              <input type="checkbox" class="item-checkbox" data-price="1.00"> Jamón
+              <input type="text" class="item-price" value="0.00">
+            </li>
+            <li>
+              <input type="checkbox" class="item-checkbox" data-price="1.00"> Harina de maiz
+              <input type="text" class="item-price" value="0.00">
+            </li>
+            <li>
+              <input type="checkbox" class="item-checkbox" data-price="1.00"> Mantequilla
+              <input type="text" class="item-price" value="0.00">
+            </li>
+            <li>
+              <input type="checkbox" class="item-checkbox" data-price="1.00"> Huevos
+              <input type="text" class="item-price" value="0.00">
+            </li>
+            <li>
+              <input type="checkbox" class="item-checkbox" data-price="1.00"> Condimentos
+              <input type="text" class="item-price" value="0.00">
+            </li>
+            <li>
+              <input type="checkbox" class="item-checkbox" data-price="1.00"> Azucar
+              <input type="text" class="item-price" value="0.00">
+            </li>
+            <li>
+              <input type="checkbox" class="item-checkbox" data-price="1.00"> Sal
+              <input type="text" class="item-price" value="0.00">
+            </li>
+            <li>
+              <input type="checkbox" class="item-checkbox" data-price="1.00"> Yogurt
+              <input type="text" class="item-price" value="0.00">
+            </li>
+          </ul>
+          <p>Total: R$<span id="total-price">0.00</span></p>
+        </form>
+
+        <script>
+          const checkboxes = document.querySelectorAll('.item-checkbox');
+          const totalPriceElement = document.getElementById('total-price');
+
+          checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', updateTotalPrice);
+          });
+
+          function updateTotalPrice() {
+            let total = 0;
+            checkboxes.forEach(checkbox => {
+              if (checkbox.checked) {
+                const price = parseFloat(checkbox.getAttribute('data-price'));
+                const priceInput = checkbox.nextElementSibling;
+                total += price * parseFloat(priceInput.value || 0);
+              }
+            });
+
+            totalPriceElement.textContent = total.toFixed(2);
+          }
+        </script>
+      </label>
+    </div>
+
+    <div>
+    </div>
+  </body>
+
+</html>
