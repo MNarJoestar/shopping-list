@@ -1,0 +1,27 @@
+label{
+  font-size: larger;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: rgba(0, 238, 255, 0.507);
+}
+body{
+  background-color: rgba(143, 228, 235, 0.438);
+  background:linear-gradient(rgb(14, 39, 122),rgb(110, 34, 209), rgb(17, 56, 163));
+}
+div{
+  border:3px solid;
+  border-color: rgb(1, 1, 24);
+  width: 550px;
+  margin: auto;
+  box-shadow: 0 0 30px 0 blueviolet;
+
+}
+h1{
+  color: cyan;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: larger;
+  font-weight: 300;
+  margin: auto;
+  text-align: center; 
+  text-transform: uppercase;
+
+}
